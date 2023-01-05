@@ -1,7 +1,7 @@
 # Ecommerce-Website
  A website written using JavaScript, HTML, and CSS. MongoDB was used as the database for the website.
  
-###To run the website on your local machine do the following:
+### To run the website on your local machine do the following:
 
 - 1. Create a database in MongoDB called ecommerce
 
