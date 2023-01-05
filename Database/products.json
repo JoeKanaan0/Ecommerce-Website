@@ -1,0 +1,393 @@
+[{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec5e"
+  },
+  "productName": "Blue Origin Rocket",
+  "price": 430000000,
+  "stock": 4,
+  "description": "Gets you into orbit",
+  "rating": 3,
+  "image": "1671737203481.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Good",
+      "rating": 3
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389faf5b62abfadcccbef50"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec5f"
+  },
+  "productName": "Amazon",
+  "price": 0.01,
+  "stock": 1,
+  "description": "Amazon is a terrible website. It's barely comparable to this one. I wish if I had people working on my team that can build a website as good as this one. Please buy amazon from me for 0.01 dollar it would make my day.",
+  "rating": 4,
+  "image": "1671737209886.png",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fadab62abfadcccbef4f"
+      },
+      "review": "good",
+      "rating": 3
+    },
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "amazing",
+      "rating": 5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389faf5b62abfadcccbef50"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec60"
+  },
+  "productName": "SpaceX Rocket",
+  "price": 54683000,
+  "stock": 5,
+  "description": "Will get you safely to mars.",
+  "rating": 2.25,
+  "image": "1671737138983.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "Bad.",
+      "rating": 1
+    },
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "Very nice",
+      "rating": 3.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fadab62abfadcccbef4f"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec61"
+  },
+  "productName": "Tesla Series X",
+  "price": 42599.99,
+  "stock": 12,
+  "description": "Electric car. Goes from 0 to 100 quickly",
+  "rating": 3.3333333333333335,
+  "image": "1671737145996.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "Terrible.",
+      "rating": 0.5
+    },
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "Amazing",
+      "rating": 5
+    },
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Very Fast.",
+      "rating": 4.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fadab62abfadcccbef4f"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec62"
+  },
+  "productName": "Neural Link Chip",
+  "price": 7199.99,
+  "stock": 0,
+  "description": "Will allow you to overcome disabilities",
+  "rating": 1,
+  "image": "1671737151892.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "No thanks.",
+      "rating": 1
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fadab62abfadcccbef4f"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec63"
+  },
+  "productName": "StarLink Satellite",
+  "price": 892500000,
+  "stock": 2,
+  "description": "Will provide wifi all over the world",
+  "rating": 0.5,
+  "image": "1671737158554.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "Terrible.",
+      "rating": 0.5
+    },
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "I agree with Jeff on this one.",
+      "rating": 0.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fadab62abfadcccbef4f"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec64"
+  },
+  "productName": "Gaming Mouse",
+  "price": 1.79,
+  "stock": 8,
+  "description": "Has all gaming requirements will all buttons on the size and different sensitivity options.",
+  "rating": 1.5,
+  "image": "1671736115957.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "bad",
+      "rating": 1.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fac1b62abfadcccbef4e"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec65"
+  },
+  "productName": "Toyota Corolla",
+  "price": 130000.99,
+  "stock": 11,
+  "description": "Very Durable",
+  "rating": 5,
+  "image": "1671736816764.jpeg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "Amazing car.",
+      "rating": 5
+    },
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Very Great Car",
+      "rating": 5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389faabb62abfadcccbef4d"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec66"
+  },
+  "productName": "Tecno Pova 2",
+  "price": 170.02,
+  "stock": 2,
+  "description": "Fast and price efficient",
+  "rating": 3,
+  "image": "1671736822452.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faf5b62abfadcccbef50"
+      },
+      "review": "Not bad.",
+      "rating": 3
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389faabb62abfadcccbef4d"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec68"
+  },
+  "productName": "Top Gun Copy",
+  "price": 52,
+  "stock": 51,
+  "description": "Good as new",
+  "rating": null,
+  "image": "1671736170610.jpg",
+  "reviews": [],
+  "supplierID": {
+    "$oid": "6389fac1b62abfadcccbef4e"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec69"
+  },
+  "productName": "Apple watch",
+  "price": 3.14,
+  "stock": 14,
+  "description": "It's a very good quality watch and unopened from the box",
+  "rating": 3.5,
+  "image": "1671737275281.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Not bad.",
+      "rating": 3.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fb06b62abfadcccbef51"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec6a"
+  },
+  "productName": "Blue Sofa",
+  "price": 157.99,
+  "stock": 2,
+  "description": "Very comfortable",
+  "rating": 4.5,
+  "image": "1671737308986.webp",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Grandma loves it.",
+      "rating": 4.5
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389fb06b62abfadcccbef51"
+  }
+},{
+  "_id": {
+    "$oid": "6389f81e6e462801aaeaec6c"
+  },
+  "productName": "Black shoes",
+  "price": 2.51,
+  "stock": 5,
+  "description": "Good quality and durable.",
+  "rating": 2,
+  "image": "1671736874114.jfif",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Expensive",
+      "rating": 2
+    }
+  ],
+  "supplierID": {
+    "$oid": "6389faabb62abfadcccbef4d"
+  }
+},{
+  "_id": {
+    "$oid": "638b9322ed1906e8f52bd963"
+  },
+  "productName": "Air Conditioner",
+  "price": 37.21,
+  "stock": 3,
+  "supplierID": {
+    "$oid": "6389fb06b62abfadcccbef51"
+  },
+  "description": "Good quality and low cost.",
+  "image": "1671737353437.jpg",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      },
+      "review": "I don't recommend it to someone else.",
+      "rating": 1.5
+    }
+  ],
+  "rating": 1.5
+},{
+  "_id": {
+    "$oid": "63a47c63f998a91efbd4e454"
+  },
+  "productName": "NFT",
+  "price": 123000,
+  "stock": 7,
+  "supplierID": {
+    "$oid": "6389faabb62abfadcccbef4d"
+  },
+  "description": "One of a kind",
+  "image": "1671736941547.jfif",
+  "reviews": [
+    {
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      },
+      "review": "Very good",
+      "rating": 4.5
+    }
+  ],
+  "rating": 4.5
+},{
+  "_id": {
+    "$oid": "63a4b05c2dadb6510d8693c5"
+  },
+  "productName": "Gaming keyboard",
+  "price": 21.99,
+  "stock": 35,
+  "supplierID": {
+    "$oid": "6389fb06b62abfadcccbef51"
+  },
+  "description": "Very comfortable keys and nice sound.",
+  "image": "1671737436712.jpg",
+  "reviews": [],
+  "rating": null
+},{
+  "_id": {
+    "$oid": "63b68bb32f5d4ad12f9d33cd"
+  },
+  "productName": "Black Cap",
+  "price": 12.99,
+  "stock": 2,
+  "supplierID": {
+    "$oid": "63b68b6b2f5d4ad12f9d33cc"
+  },
+  "description": "Good quality",
+  "image": "1672907699907.jfif",
+  "reviews": [],
+  "rating": null
+}]

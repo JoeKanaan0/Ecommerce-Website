@@ -1,0 +1,292 @@
+[{
+  "_id": {
+    "$oid": "6389faabb62abfadcccbef4d"
+  },
+  "userName": "Joe Kanaan",
+  "email": "joe.kanaan@gmail.com",
+  "password": "1234",
+  "profile": "1671738003131.jpg",
+  "cart": [
+    {
+      "$oid": "638e419810c977251d1ac146"
+    },
+    {
+      "$oid": "638e41aa10c977251d1ac147"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec64"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec60"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec5e"
+    }
+  ],
+  "transactions": [
+    {
+      "productName": "Tesla Series X",
+      "price": 42599.99,
+      "quantity": 3,
+      "time": {
+        "$date": {
+          "$numberLong": "1671734994710"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Air Conditioner",
+      "price": 37.21,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735013219"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Blue Origin Rocket",
+      "price": 430000000,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735016026"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Gaming Mouse",
+      "price": 1.79,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735018751"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Gaming keyboard",
+      "price": 3.16,
+      "quantity": 7,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735023647"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Tesla Series X",
+      "price": 42599.99,
+      "quantity": 4,
+      "time": {
+        "$date": {
+          "$numberLong": "1671739412354"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Neural Link Chip",
+      "price": 7199.99,
+      "quantity": 2,
+      "time": {
+        "$date": {
+          "$numberLong": "1671739441065"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "SpaceX Rocket",
+      "price": 54683000,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671739558234"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "SpaceX Rocket",
+      "price": 54683000,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671740702093"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    },
+    {
+      "productName": "Black Cap",
+      "price": 12.99,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1672907922403"
+        }
+      },
+      "userId": {
+        "$oid": "6389faabb62abfadcccbef4d"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6389fac1b62abfadcccbef4e"
+  },
+  "userName": "Joe",
+  "email": "joe@gmail.com",
+  "password": "123",
+  "profile": "1671740728411.jpg",
+  "cart": [
+    {
+      "$oid": "6389f81e6e462801aaeaec60"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec5e"
+    },
+    {
+      "$oid": "63a47c63f998a91efbd4e454"
+    }
+  ],
+  "transactions": [
+    {
+      "productName": "Apple watch",
+      "price": 3.14,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735396035"
+        }
+      },
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      }
+    },
+    {
+      "productName": "Toyota Corolla",
+      "price": 130000.99,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735398773"
+        }
+      },
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      }
+    },
+    {
+      "productName": "Tesla Series X",
+      "price": 42599.99,
+      "quantity": 1,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735401872"
+        }
+      },
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      }
+    },
+    {
+      "productName": "Gaming keyboard",
+      "price": 3.16,
+      "quantity": 3,
+      "time": {
+        "$date": {
+          "$numberLong": "1671735405615"
+        }
+      },
+      "userId": {
+        "$oid": "6389fac1b62abfadcccbef4e"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6389fadab62abfadcccbef4f"
+  },
+  "userName": "Elon Musk",
+  "email": "elon.musk@gmail.com",
+  "password": "spaceX123",
+  "profile": "1671737172398.jpg",
+  "cart": [],
+  "transactions": []
+},{
+  "_id": {
+    "$oid": "6389faf5b62abfadcccbef50"
+  },
+  "userName": "Jeff Bezos",
+  "email": "jeff.bezos@gmail.com",
+  "password": "amazon123",
+  "profile": "1671737223494.jpg",
+  "cart": [
+    {
+      "$oid": "6389f81e6e462801aaeaec61"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec68"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec64"
+    }
+  ],
+  "transactions": []
+},{
+  "_id": {
+    "$oid": "6389fb06b62abfadcccbef51"
+  },
+  "userName": "John Doe",
+  "email": "john.doe@gmail.com",
+  "password": "john123",
+  "profile": "1671737242531.jpg",
+  "cart": [
+    {
+      "$oid": "6389f81e6e462801aaeaec5f"
+    },
+    {
+      "$oid": "6389f81e6e462801aaeaec60"
+    }
+  ],
+  "transactions": []
+},{
+  "_id": {
+    "$oid": "63b68b6b2f5d4ad12f9d33cc"
+  },
+  "userName": "Brayen Leynet",
+  "email": "bryan.leynet@gmail.com",
+  "password": "12345",
+  "profile": "default-profile.jpg",
+  "cart": [
+    {
+      "$oid": "6389f81e6e462801aaeaec5f"
+    }
+  ],
+  "transactions": []
+}]
