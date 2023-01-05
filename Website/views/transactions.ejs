@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Transactions Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="../images/logo.png" width="125px">
+                    </div>
+                    <nav>
+                        <ul id="MenuItems">
+                            <div style="margin-top: 15px;">
+                                <li><a href="/market/">Market</a></li>
+                                <li><a href="/market/stocks">Stock Market</a></li>
+                                <li><a href="/market/supply">Your Products</a></li>
+                                <li><a href="/market/sell">Sell</a></li>
+                                <li><a href="/market/viewCart">Cart</a></li>
+                                <li><a href="/">Log Out</a></li>
+                            </div>
+                            <li><a href="/registration/profile"><img src="../images/<%=profile%>" padding-bottom="20px" class="nav-image"></a></li>
+                        </ul>
+                    </nav>
+                    <img src="../images/menu.png" class="menu-icon"
+                    onclick="menutoggle()">
+                </div>
+            </div>
+        </div>
+
+    <div class="small-container">
+        <h3 class="title">Transactions</h3>
+    </div>
+
+    <% if (info.length == 0) { %>
+        <h3 style="text-align: center;">You have no transactions.</h3>
+    <% } else {%>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center">Product Name</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (var i = 0; i < info.length; i++) { %>
+                <tr>
+                  <td class="text-center"><%= info[i].productName %></td>
+                  <td class="text-center"><%= info[i].quantity %></td>
+                  <td class="text-center"><%= info[i].price %>$</td>
+                  <td class="text-center"><%= info[i].time %></td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+    
+    <% } %>
+
+</body>
+</html>

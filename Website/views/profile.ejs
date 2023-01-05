@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Profile Page</title>
+        <link rel = "stylesheet" href = "../css/style.css">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    </head>
+    
+    <body>
+    
+        <div class = "header">
+            <div class = "container">
+                <div class = "navbar">
+                    <div class = "logo">
+                        <img src = "../images/logo.png" width = "125px">
+                    </div>
+                    <nav>
+                        <ul id = "MenuItems">
+                            <div style="margin-top: 15px;">
+                                <li><a href = "/market/">Market</a></li>
+                                <li><a href = "/market/stocks">Stock Market</a></li>
+                                <li><a href = "/market/supply">Your Products</a></li>
+                                <li><a href = "/market/transactions">Transactions</a></li>
+                                <li><a href = "/market/sell">Sell</a></li>
+                                <li><a href = "/market/viewCart">Cart</a></li>
+                                <li><a href = "/">Log Out</a></li>
+                            </div>
+                            <li><a href = "#"><img src="../images/<%=info.profile%>" margin-top = "20px" class = "nav-image"/></a></li>
+                        </ul>
+                    </nav>
+                    <img src = "../images/menu.png" class = "menu-icon"
+                    onclick = "menutoggle()">
+                </div>
+            </div>
+        </div>
+
+    <div class = "edit-bg">
+        <div class = "form-box-profile" style = "padding-top: 550px;">
+            <form action = "/registration/editProfile" method = "post" class = "input-group" enctype = "multipart/form-data">
+                <center>
+                <div style="margin-left: 6rem; padding-bottom: 1rem; margin-top: -70px; padding: auto;">
+                    <input name = "image" type='file' onchange="readProfileURL(this);" value = "<%=info.profile%>" />
+                </div>
+                <div>
+                    <img id="blah" src="../images/<%=info.profile%>" class = "image" />
+                </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>User Name</label>
+                    <input name = "userName" onkeypress = "return alpha(event)" value = "<%= info.userName %>" type = "text" class = "input-field" placeholder = "User Name" required>
+                  </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>Password</label>
+                    <input name = "password" type = "password" value = "<%= info.password %>" class = "input-field" placeholder = "Password" required>
+                  </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>Confirm Password</label>
+                    <input name = "confirm" type = "password" value = "<%= info.password %>" class = "input-field" placeholder = "Confirm Password" required>
+                  </div>
+                </center>
+                <button type="submit" value="submit" class="submit-btn">Edit Profile</button><br />
+              </form>
+        </div>
+    </div>
+
+    <script src= "../scripts/script.js"></script> 
+
+    </body>
+
+</html>

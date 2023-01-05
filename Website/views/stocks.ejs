@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "../css/style.css">
+    <title>Stock Market Page</title>
+</head>
+<body>
+
+
+    <div class = "header">
+        <div class = "container">
+            <div class = "navbar">
+                <div class = "logo">
+                    <img src = "../images/logo.png" width = "125px">
+                </div>
+                <nav>
+                    <ul id = "MenuItems">
+                        <div style="margin-top: 15px;">
+                            <li><a href = "/market/">Market</a></li>
+                            <li><a href = "/market/transactions">Transactions</a></li>
+                            <li><a href = "/market/supply">Your Products</a></li>
+                            <li><a href = "/market/sell">Sell</a></li>
+                            <li><a href = "/market/viewCart">Cart</a></li>
+                            <li><a href = "/">Log Out</a></li>
+                        </div>
+                        <li><a href = "/registration/profile"><img src = "../images/<%=profile%>" padding-bottom = 40px" class = "nav-image"></a></li>
+                    </ul>
+                </nav>
+                <img src = "../images/menu.png" class = "menu-icon"
+                onclick = "menutoggle()">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <div style = "width: 45%; height: 300px; float: left; margin-left: 2rem;">
+        <canvas id="stock1"></canvas>        
+    </div>
+    <div style = "width: 45%; height: 300px; float: right; margin-right: -2rem;">
+        <canvas id="stock2"></canvas>
+    </div>
+    <div style = "width: 45%; height: 300px; float: left; margin-left: 2rem">
+        <canvas id="stock3"></canvas>
+    </div>
+    <div style = "width: 45%; height: 300px; float: right; margin-right: -2rem;">
+        <canvas id="stock4"></canvas>
+    </div>
+
+
+    <p type = "text" id = "stock1_x" style = "display: none;"><%= data[0][0] %></p>
+    <p type = "text" id = "stock1_y" style = "display: none;"><%= data[0][1] %></p>
+
+
+    <p type = "text" id = "stock2_x" style = "display: none;"><%= data[1][0] %></p>
+    <p type = "text" id = "stock2_y" style = "display: none;"><%= data[1][1] %></p>
+
+
+    <p type = "text" id = "stock3_x" style = "display: none;"><%= data[2][0] %></p>
+    <p type = "text" id = "stock3_y" style = "display: none;"><%= data[2][1] %></p>
+
+
+    <p type = "text" id = "stock4_x" style = "display: none;"><%= data[3][0] %></p>
+    <p type = "text" id = "stock4_y" style = "display: none;"><%= data[3][1] %></p>
+
+    <script>
+
+        // Stock 1
+        const stock1_x_temp = document.getElementById("stock1_x").innerHTML;
+        const stock1_y_temp = document.getElementById("stock1_y").innerHTML;
+
+        const stock1_x = stock1_x_temp.split(",");
+        const stock1_y = stock1_y_temp.split(",");
+
+        // Stock 2
+        const stock2_x_temp = document.getElementById("stock2_x").innerHTML;
+        const stock2_y_temp = document.getElementById("stock2_y").innerHTML;
+
+        const stock2_x = stock2_x_temp.split(",");
+        const stock2_y = stock2_y_temp.split(",");
+
+        // Stock 3
+        const stock3_x_temp = document.getElementById("stock3_x").innerHTML;
+        const stock3_y_temp = document.getElementById("stock3_y").innerHTML;
+
+        const stock3_x = stock3_x_temp.split(",");
+        const stock3_y = stock3_y_temp.split(",");
+
+        // Stock 4
+        const stock4_x_temp = document.getElementById("stock4_x").innerHTML;
+        const stock4_y_temp = document.getElementById("stock4_y").innerHTML;
+
+        const stock4_x = stock4_x_temp.split(",");
+        const stock4_y = stock4_y_temp.split(",");
+
+        // Put 4 charts in each of the 4 stock divs created above
+        chartIt(stock1_x, stock1_y, "stock1", "Tesla Stocks");
+        chartIt(stock2_x, stock2_y, "stock2", "Apple Stocks");
+        chartIt(stock3_x, stock3_y, "stock3", "Microsoft Stocks");
+        chartIt(stock4_x, stock4_y, "stock4", "Amazon Stocks");
+
+        async function chartIt(stockx, stocky, id, title) {
+            
+            const x_labels = stockx;
+            const y_labels = stocky;
+            const ctx = document.getElementById(id);
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: x_labels,
+                    datasets: [{
+                    label: title,
+                    data: y_labels,
+                    borderWidth: 1
+                    }]
+                },
+                options: {
+                    elements: {
+                        point:{
+                            radius: 0
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                // Include a dollar sign in the ticks
+                                callback: function(value, index, ticks) {
+                                    return '$' + value;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+        }
+           
+
+    </script>
+
+    <script src= "../scripts/script.js"></script>
+
+</body>
+</html>

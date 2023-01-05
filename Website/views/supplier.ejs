@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Sell Page</title>
+    <link rel = "stylesheet" href = "../css/style.css">
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class = "header">
+        <div class = "container">
+            <div class = "navbar">
+                <div class = "logo">
+                    <img src = "../images/logo.png" width = "125px">
+                </div>
+                <nav>
+                    <ul id = "MenuItems">
+                        <div style="margin-top: 15px;">
+                            <li><a href = "/market">Market</a></li>
+                            <li><a href = "/market/stocks">Stock Market</a></li>
+                            <li><a href = "/market/supply">Your Products</a></li>
+                            <li><a href = "/market/transactions">Transactions</a></li>
+                            <li><a href = "/market/viewCart">Cart</a></li>
+                            <li><a href = "/">Log Out</a></li>
+                        </div>
+                        <li><a href = "/registration/profile"><img src = "../images/<%=profile%>" padding-bottom = "20px" class = "nav-image"></a></li>
+                    </ul>
+                </nav>
+                <img src = "../images/menu.png" class = "menu-icon"
+                onclick = "menutoggle()">
+            </div>
+        </div>
+    </div>
+
+    <div class = "edit-bg">
+        <div class = "form-box-profile" style = "padding-top: 620px;">
+            <form action = "/market/api/sell" method = "post" class = "input-group" enctype = "multipart/form-data">
+                <center>
+                  <div style="margin-top: -90px; padding: auto; padding-bottom: 20px;">
+                      <img id="blah" src="../images/default.jpg" class = "sell-image"/>
+                  </div>
+                  <div style="margin-left: 6rem; padding-bottom: 1rem;">
+                    <input name = "image" type='file' onchange="readSellURL(this);" required/>
+                  </div style="margin-bottom: 20px; margin-top: 20px; padding-left: 95px;">
+                  <div style = "margin-bottom: 20px;">
+                    <label>Product Name</label>
+                    <input name = "productName" onkeypress = "return alpha(event)" type = "text" class = "input-field" placeholder = "Product Name" required>
+                  </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>Price</label>
+                    <input name = "price" type = "number" min = "0.01" step = "0.01" class = "input-field" placeholder = "Price" required>
+                  </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>Stock</label>
+                    <input name = "stock" type = "number" min = "1" step = "1" class = "input-field" placeholder = "Stock" required>
+                  </div>
+                  <div style = "margin-bottom: 20px;">
+                    <label>Description</label>
+                    <textarea name = "description" iplaceholder="Write something.." required></textarea>
+                  </div>
+                </center>
+                <button type="submit" value="submit" class="submit-btn">Release To Market</button><br />
+              </form>
+        </div>
+    </div>
+
+    <script src= "../scripts/script.js"></script> 
+    
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Cart Page</title>
+        <link rel = "stylesheet" href = "../css/style.css">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+    
+    
+        <div class = "header">
+            <div class = "container">
+                <div class = "navbar">
+                    <div class = "logo">
+                        <img src = "../images/logo.png" width = "125px">
+                    </div>
+                    <nav>
+                        <ul id = "MenuItems">
+                            <div style="margin-top: 15px;">
+                                <li><a href = "/market/">Market</a></li>
+                                <li><a href = "/market/stocks">Stock Market</a></li>
+                                <li><a href = "/market/supply">Your Products</a></li>
+                                <li><a href = "/market/transactions">Transactions</a></li>
+                                <li><a href = "/market/sell">Sell</a></li>
+                                <li><a href = "/">Log Out</a></li>
+                            </div>
+                            <li><a href = "/registration/profile"><img src = "../images/<%=profile%>" padding-bottom = "20px" class = "nav-image"></a></li>
+                        </ul>
+                    </nav>
+                    <img src = "../images/menu.png" class = "menu-icon"
+                    onclick = "menutoggle()">
+                </div>
+            </div>
+        </div>
+
+        <div class="small-container">
+            <h2 class = "title">Your Cart</h2>
+            <% if (info.length == 0) { %>
+                <h3 style = "text-align: center;">Your cart is empty.</h3>
+            <% } %>
+            <% for (var i = 0; i < info.length; i += 4) { %>
+                <div class="row">
+                <% for (var j = i; j < info.length && j < i + 4; j++) { %>
+                    <div class="col-4">
+                        <div>
+                            <a href = "/market/details?id=<%=info[j]._id%>"><img src = "../images/<%=info[j].image%>" width = "200px" height = "160px"></a>          
+                        </div>
+                        <div>
+                            <a href = "/market/details?id=<%=info[j]._id%>"><%= info[j].productName %></a>
+                        </div>
+                        <% if (info[j].rating != null) { %>
+                            <% var count = 0 %>
+                            <% var rating = info[j].rating %>
+                            <div class = "rating">
+                            <% while (rating >= 1) { %>
+                                <i class="fa fa-star"></i>
+                                <% count++ %>
+                                <% rating-- %>
+                            <% } %>
+                            
+                            <% if (rating >= 0.5) { %>
+                                <i class="fa fa-star-half-o"></i>
+                                <% rating = 0 %>
+                                <% count++ %>
+                            <% } %>
+    
+                            <% for (let k = count; k < 5; k++) { %>
+                                <i class="fa fa-star-o"></i>
+                                <% count++ %>
+                            <% } %> 
+                            </div>
+                        <% } %>
+                        <div>
+                            <a href = "/market/details?id=<%=info[j]._id%>"><%= info[j].price %>$</a>
+                        </div>
+                    </div>
+                <% } %>
+                </div>
+            <% } %>
+        </div>
+
+
+        <script src= "../scripts/script.js"></script> 
+
+</body>
+
+</html>

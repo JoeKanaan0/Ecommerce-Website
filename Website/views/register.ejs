@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login And Sign Up Page</title>
+        <link rel="stylesheet" href = "../css/register.css">
+    </head>
+    <body>
+        <div class = "register-bg">
+            <div class = "form-box">
+                <div class = "button-box">
+                    <div id = "btn"></div>
+                    <button type = "button" class = "toggle-btn" onclick = "login()">Log In</button>
+                    <button type = "button" class = "toggle-btn" onclick = "register()">Register</button>
+
+                </div>
+                <form method = "post" id = "login" action = "/registration/login" class = "input-group">
+                    <% if (register != undefined && !register) { %>
+                        <% if (error == 0) { %>
+                            <center><p style = "margin-top: 5px; margin-bottom: 5px;">Wrong Username</p></center>
+                        <% } %>
+                        <input name = "name" value = "<%= name %>" type = "text" class = "input-field" placeholder = "User Name Or Email" required>
+                        <% if (error == 1) { %>
+                            <center><p style = "margin-top: 5px; margin-bottom: 5px;">Wrong Password</p></center>
+                        <% } %>
+                        <input name = "password" value = "<%= password %>" type = "password" class = "input-field" placeholder = "Password" required>
+                    <% } else {  %>
+                        <input name = "name" type = "text" class = "input-field" placeholder = "User Name Or Email" required>
+                        <input name = "password" type = "password" class = "input-field" placeholder = "Password" required>
+                    <% } %>
+                    <input type = "checkbox" class = "check-box"> <span>Remember Password</span>
+                    <button type = "submit" class = "submit-btn">Log In</button>
+
+                </form>
+                <form method = "post" id = "register" action = "/registration/signUp" class = "input-group">
+
+                    <% if ((register != undefined) && register) { %>
+                        <% if (error == 0) { %>
+                            <center><p style = "margin-top: 5px; margin-bottom: 5px;">Email Already Exists.</p></center>
+                        <% } %>
+                        <input name = "email" value = "<%= email %>" type = "email" class = "input-field" placeholder = "Email" required>
+                        <% if (error == 1) { %>
+                            <center><p style = "margin-top: 5px; margin-bottom: 5px;">Username Already Exists.</p></center>
+                        <% } %>
+                        <input name = "name" value = "<%= name %>" onkeypress = "return alpha(event)" type = "text" class = "input-field" placeholder = "User Name" required>
+                        <input name = "password" value = "<%= password %>" type = "password" class = "input-field" placeholder = "Password" required>
+
+                    <% } else { %>
+                        <input name = "email" type = "email" class = "input-field" placeholder = "Email" required>
+                        <input name = "name" onkeypress = "return alpha(event)" type = "text" class = "input-field" placeholder = "User Name" required>
+                        <input name = "password" type = "password" class = "input-field" placeholder = "Password" required>
+                    <% } %>
+                    <input type = "checkbox" class = "check-box"> <span>I agree to the terms and conditions</span>
+                    <button type = "submit" class = "submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <% if (register) { %>
+            <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+            </script>
+        <% } %>
+
+        <script>
+
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register() {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+
+            function login() {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+
+        </script>
+
+        <script src= "../scripts/script.js"></script> 
+
+    </body>
+</html>

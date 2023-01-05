@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Details Page</title>
+        <link rel = "stylesheet" href = "../css/style.css">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+    
+    
+        <div class = "header">
+            <div class = "container">
+                <div class = "navbar">
+                    <div class = "logo">
+                        <img src = "../images/logo.png" width = "125px">
+                    </div>
+                    <nav>
+                        <ul id = "MenuItems">
+                            <div style="margin-top: 15px;">
+                                <li><a href = "/market/">Market</a></li>
+                                <li><a href = "/market/stocks">Stock Market</a></li>
+                                <li><a href = "/market/supply">Your Products</a></li>
+                                <li><a href = "/market/transactions">Transactions</a></li>
+                                <li><a href = "/market/sell">Sell</a></li>
+                                <li><a href = "/market/viewCart">Cart</a></li>
+                                <li><a href = "/">Log Out</a></li>
+                            </div>
+                            <li><a href = "/registration/profile"><img src = "../images/<%=product.profile%>" padding-bottom = "20px" class = "nav-image"></a></li>
+                        </ul>
+                    </nav>
+                    <img src = "../images/menu.png" class = "menu-icon"
+                    onclick = "menutoggle()">
+                </div>
+            </div>
+        </div>
+
+        <div class = "offer">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src = "../images/<%=product.image%>" class = "offer-img">
+                    </div>
+                    <div class="col-2">
+                        <h3>$<%= product.price%></h3>
+                        <h1><%= product.productName%></h1>
+                        <% if (product.rating != null) { %>
+                            <% var count = 0 %>
+                            <% var rating = product.rating %>
+                            <div class = "rating">
+                            <% while (rating >= 1) { %>
+                                <i class="fa fa-star"></i>
+                                <% count++ %>
+                                <% rating-- %>
+                            <% } %>
+                            
+                            <% if (rating >= 0.5) { %>
+                                <i class="fa fa-star-half-o"></i>
+                                <% rating = 0 %>
+                                <% count++ %>
+                            <% } %>
+    
+                            <% for (let k = count; k < 5; k++) { %>
+                                <i class="fa fa-star-o"></i>
+                                <% count++ %>
+                            <% } %> 
+                            </div>
+                        <% } %>
+                        <div>
+                            <small><%= product.description%></small>
+                        </div>
+                        <a href = "/market/buy?id=<%=product._id%>" id = "buy" class = "btn">Buy Now &#8594;</a>
+                        <% if (product.InCart) { %>
+                            <a href = "/market/deleteCart?id=<%=product._id%>" class = "btn">Remove From Cart &#8594;</a>
+                        <% } else { %>
+                            <a href = "/market/cart?id=<%=product._id%>" class = "btn">Add To Cart &#8594;</a>
+                        <% } %>
+                        <div>
+                            <h4 style = "margin-bottom: 2rem;">Quantity: <input value = "1" id = "quantity" 
+                                name = "quantity" placeholder="Quantity" type="number" min = "1" 
+                                max="<%= product.stock %>" step = "1" style = "width: 2.5rem" required></h4>
+                            <h4>Items in Stock: <%= product.stock%></h4>
+                            <p type = "text" id = "stock" style = "display: none;"><%= product.stock %></p>
+                        </div>
+
+                        <script>
+
+                            var input = document.getElementById("quantity");
+                            var link = document.getElementById("buy");
+                            var stock = parseInt(document.getElementById("stock").innerHTML);
+
+                            console.log("Stock:", stock);
+
+                            link.addEventListener("click", function() {
+
+                                var quantity = parseFloat(input.value);
+
+                                if (quantity < 1 || quantity > stock || !Number.isInteger(quantity)) {
+                                    console.log(quantity);
+                                    console.log(stock);
+                                // If the quantity is invalid, prevent the link from being followed
+                                event.preventDefault();
+                                alert("Please enter a valid quantity");
+                                } else {
+                                // If the quantity is valid, update the href attribute with the current quantity value
+                                link.href += "&quantity=" + quantity;
+                                }
+
+                            });
+
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-container">
+            <h2 class = "title">Reviews</h2>
+        </div>
+
+        <center>
+            <% if (product.reviewed) { %>
+                <div class="popup" onclick="popUp()">
+                    <span class="popuptext" id = "myPopup" style = "margin-bottom: -40px;">You Have Already Reviewed This Product!</span>
+                    <a href = "#" class = "btn">Add a Review</a>
+                </div>
+            <% } else { %>
+                <a href = "#divOne" class = "btn">Add a Review</a>
+            <% } %>
+        </center>
+
+        <div class="overlay" id="divOne">
+            <div class="wrapper">
+                <h2>Add a Review</h2><a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="container2">
+                        <form action = "/market/review?id=<%=product._id%>" method = "post">
+                            <div>
+                            <input name = "rating" placeholder="Rating" type="number" min = "0.5" max = "5" step = "0.5" required>
+                            </div>
+                            <div>
+                            <center><label>Review</label> </center>
+                            <textarea name = "review" iplaceholder="Write something.." required></textarea>
+                            <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <% userRating = null%>
+    <% userReview = null%>
+    
+    <div class="testimonial">
+        <div class="small-contianer">
+            <% for (var i = 0; i < reviewInfo.length; i += 3) { %>
+            <div class="row">
+                <% for (var j = i; j < reviewInfo.length && j < i + 3; j++) { %>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p><%= reviewInfo[j].review %></p>
+                    <% if (reviewInfo[j].rating != null) { %>
+                        <% var count = 0 %>
+                        <% var rating = reviewInfo[j].rating %>
+                        <div class = "rating">
+                        <% while (rating >= 1) { %>
+                            <i class="fa fa-star"></i>
+                            <% count++ %>
+                            <% rating-- %>
+                        <% } %>
+                        
+                        <% if (rating >= 0.5) { %>
+                            <i class="fa fa-star-half-o"></i>
+                            <% rating = 0 %>
+                            <% count++ %>
+                        <% } %>
+
+                        <% for (let k = count; k < 5; k++) { %>
+                            <i class="fa fa-star-o"></i>
+                            <% count++ %>
+                        <% } %> 
+                        </div>
+                    <% } %>
+                    <img src = "../images/<%=reviewInfo[j].profile%>">
+                    <h3><%= reviewInfo[j].userName %></h3>
+                    <% if (reviewInfo[j].userId.toString() == product.userId.toString()) { %>
+                        <% userRating = reviewInfo[j].rating %>
+                        <% userReview = reviewInfo[j].review %>
+                        <a href = "#divTwo" class = "btn">Edit</a>
+                        <a href = "/market/deleteReview?id=<%=product._id%>" class = "btn">Delete</a>
+                    <% } %>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="overlay" id="divTwo">
+        <div class="wrapper">
+            <h2>Review</h2><a class="close" href="#">&times;</a>
+            <div class="content">
+                <div class="container2">
+                    <form action = "/market/confirmReview?id=<%=product._id%>" method = "post">
+                        <div>
+                        <label>Rating</label>
+                        <input value = "<%= userRating %>" name = "rating" placeholder="Rating" type="number" min = "0.5" max = "5" step = "0.5" required >
+                        </div>
+                        <div>
+                        <label>Review</label> 
+                        <textarea name = "review" iplaceholder="Write something.." required><%=userReview %></textarea>
+                        <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------- footer --------->>
+    <div class = "footer">
+        <div class="container">
+            <hr>
+            <p class = "copyright">Copyright 2022 - Joe Kanaan</p>
+        </div>
+    </div>
+
+    <script src= "../scripts/script.js"></script> 
+    
+</body>
+
+</html>
